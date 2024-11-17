@@ -10,5 +10,5 @@ resource "digitalocean_droplet" "droplet" {
 
 resource "digitalocean_ssh_key" "sshKey" {
   name       = "Thinkpad ssh key"
-  public_key = file("./digitalocean.pub")
+  public_key = file("ssh/digitalocean.pub")
 }
