@@ -1,3 +1,4 @@
 variable "do_token" {
-  type = string
+  type        = string
+  description = "DigitalOcean token"
 }
