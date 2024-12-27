@@ -1,17 +1,25 @@
 resource "digitalocean_kubernetes_cluster" "k8s" {
-  name          = "kubernetes-cluster-fra1"
-  region        = "fra1"
-  version       = "1.31.1-do.4"
-  auto_upgrade  = true
-  surge_upgrade = true
-  ha            = false
+  for_each = var.k8s_clusters
+
+  name          = each.key
+  region        = each.value.region
+  version       = each.value.version
+  auto_upgrade  = each.value.auto_upgrade
+  surge_upgrade = each.value.surge_upgrade
+  ha            = each.value.high_availability
 
   node_pool {
-    name       = "worker-pool"
-    size       = "s-1vcpu-2gb"
-    node_count = 1
-    auto_scale = true
-    min_nodes  = 2
-    max_nodes  = 2
+    name       = "${each.key}-pool"
+    size       = each.value.size
+    node_count = each.value.node_count
+    auto_scale = each.value.auto_scale
+    min_nodes  = each.value.min_nodes
+    max_nodes  = each.value.max_nodes
+  }
+
+  lifecycle {
+    ignore_changes = [
+      node_pool
+    ]
   }
 }
