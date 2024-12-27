@@ -2,22 +2,22 @@
 
 ## Create namespace
 ```bash
-kubectl apply -f namespace.yaml
+kubectl apply -f post-installation/k8s/kubernetes-dashboard/namespace.yaml
 ```
 
 ## Create service account
 ```bash
-kubectl apply -f service-account.yaml
+kubectl apply -f post-installation/k8s/kubernetes-dashboard/service-account.yaml
 ```
 
 ## Create cluster role binding
 ```bash
-kubectl apply -f cluster-role-binding.yaml
+kubectl apply -f post-installation/k8s/kubernetes-dashboard/cluster-role-binding.yaml
 ```
 
 ## Create secret
 ```bash
-kubectl apply -f secret.yaml
+kubectl apply -f post-installation/k8s/kubernetes-dashboard/secret.yaml
 ```
 
 ## Deploy dashboard with helm repository
