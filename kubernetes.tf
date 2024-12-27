@@ -8,6 +8,11 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   surge_upgrade = each.value.surge_upgrade
   ha            = each.value.high_availability
 
+  maintenance_policy {
+    start_time = each.value.maintenance_start_time
+    day        = each.value.maintenance_day
+  }
+
   node_pool {
     name       = "${each.key}-pool"
     size       = each.value.size

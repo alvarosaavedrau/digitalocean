@@ -5,16 +5,18 @@ variable "do_token" {
 
 variable "k8s_clusters" {
   type = map(object({
-    region            = string
-    version           = string
-    auto_upgrade      = bool
-    surge_upgrade     = bool
-    high_availability = bool
-    size              = string
-    node_count        = number
-    auto_scale        = bool
-    min_nodes         = number
-    max_nodes         = number
+    region                 = string
+    version                = string
+    auto_upgrade           = bool
+    surge_upgrade          = bool
+    high_availability      = bool
+    maintenance_start_time = string
+    maintenance_day        = string
+    size                   = string
+    node_count             = number
+    auto_scale             = bool
+    min_nodes              = number
+    max_nodes              = number
   }))
   default = {}
 }
