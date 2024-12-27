@@ -19,6 +19,18 @@ variable "k8s_clusters" {
   default = {}
 }
 
+variable "k8s_clusters_node_pool" {
+  type = map(object({
+    k8s_name   = string
+    size       = string
+    node_count = number
+    auto_scale = bool
+    min_nodes  = number
+    max_nodes  = number
+  }))
+  default = {}
+}
+
 variable "droplets" {
   type = map(object({
     image           = string

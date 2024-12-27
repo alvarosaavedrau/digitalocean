@@ -23,3 +23,15 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
     ]
   }
 }
+
+resource "digitalocean_kubernetes_node_pool" "k8sNodePool" {
+  for_each = var.k8s_clusters_node_pool
+
+  cluster_id = digitalocean_kubernetes_cluster.k8s[each.value.k8s_name].id
+  name       = "${each.key}-pool"
+  size       = each.value.size
+  node_count = each.value.node_count
+  auto_scale = each.value.auto_scale
+  min_nodes  = each.value.min_nodes
+  max_nodes  = each.value.max_nodes
+}
