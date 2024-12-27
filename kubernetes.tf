@@ -39,4 +39,10 @@ resource "digitalocean_kubernetes_node_pool" "k8sNodePool" {
   auto_scale = each.value.auto_scale
   min_nodes  = each.value.min_nodes
   max_nodes  = each.value.max_nodes
+
+  lifecycle {
+    ignore_changes = [
+      node_count
+    ]
+  }
 }
