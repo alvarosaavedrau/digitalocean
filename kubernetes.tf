@@ -40,7 +40,9 @@ resource "local_file" "kubeconfig" {
   ]
 
   lifecycle {
-    ignore_changes = [content]
+    ignore_changes = [
+      content
+    ]
   }
 }
 
