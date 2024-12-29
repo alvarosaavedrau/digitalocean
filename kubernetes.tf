@@ -34,6 +34,14 @@ resource "local_file" "kubeconfig" {
 
   filename = "${path.module}/kubeconfigs/${each.key}-kubeconfig.yaml"
   content  = each.value.kube_config[0].raw_config
+
+  depends_on = [
+    digitalocean_kubernetes_cluster.k8s
+  ]
+
+  lifecycle {
+    ignore_changes = [content]
+  }
 }
 
 resource "digitalocean_kubernetes_node_pool" "k8sNodePool" {
