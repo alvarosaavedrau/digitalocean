@@ -13,6 +13,4 @@ terraform {
   required_version = ">= 1.9.5"
 }
 
-provider "digitalocean" {
-  token = var.do_token
-}
+provider "digitalocean" {}

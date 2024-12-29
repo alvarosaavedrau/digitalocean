@@ -1,8 +1,3 @@
-variable "do_token" {
-  type        = string
-  description = "DigitalOcean token"
-}
-
 variable "k8s_clusters" {
   type = map(object({
     region                 = string
