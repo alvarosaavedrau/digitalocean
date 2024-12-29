@@ -29,6 +29,13 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   }
 }
 
+resource "local_file" "kubeconfig" {
+  for_each = data.digitalocean_kubernetes_cluster.k8s
+
+  filename = "${path.module}/kubeconfigs/${each.key}-kubeconfig.yaml"
+  content  = each.value.kube_config[0].raw_config
+}
+
 resource "digitalocean_kubernetes_node_pool" "k8sNodePool" {
   for_each = var.k8s_clusters_node_pool
 
