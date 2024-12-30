@@ -18,3 +18,25 @@ output "k8s_endpoints" {
     k => v.endpoint
   }
 }
+
+output "databases_host" {
+  value = {
+    for k, v in digitalocean_database_cluster.databases :
+    k => v.host
+  }
+}
+
+output "databases_user" {
+  value = {
+    for k, v in digitalocean_database_cluster.databases :
+    k => v.user
+  }
+}
+
+output "databases_password" {
+  value = {
+    for k, v in digitalocean_database_cluster.databases :
+    k => v.password
+  }
+  sensitive = true
+}

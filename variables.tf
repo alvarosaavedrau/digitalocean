@@ -47,3 +47,17 @@ variable "ssh_keys" {
   }))
   default = {}
 }
+
+variable "databases" {
+  type = map(object({
+    engine           = string
+    version          = string
+    size             = string
+    region           = string
+    node_count       = number
+    maintenance_day  = string
+    maintenance_hour = string
+    storage_size_mib = number
+  }))
+  default = {}
+}
