@@ -2,7 +2,11 @@ terraform {
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = "2.45.0"
+      version = ">= 2.45.0"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = ">= 2.5.2"
     }
   }
   backend "s3" {
