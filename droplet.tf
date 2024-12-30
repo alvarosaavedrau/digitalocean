@@ -16,5 +16,5 @@ resource "digitalocean_ssh_key" "sshKey" {
   for_each = var.ssh_keys
 
   name       = each.key
-  public_key = file("${each.value.public_key_path}")
+  public_key = file(each.value.public_key_path)
 }
