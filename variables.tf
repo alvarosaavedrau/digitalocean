@@ -61,3 +61,7 @@ variable "databases" {
   }))
   default = {}
 }
+
+variable "kubeconfig_path" {
+  type = string
+}

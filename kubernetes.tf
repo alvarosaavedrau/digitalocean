@@ -32,7 +32,7 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
 resource "local_file" "kubeconfig" {
   for_each = data.digitalocean_kubernetes_cluster.k8s
 
-  filename = "${path.module}/kubeconfigs/${each.key}-kubeconfig.yaml"
+  filename = "${var.kubeconfig_path}/${each.key}-kubeconfig.yaml"
   content  = each.value.kube_config[0].raw_config
 
   depends_on = [
