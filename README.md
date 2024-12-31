@@ -44,9 +44,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_databases_host"></a> [databases\_host](#output\_databases\_host) | n/a |
-| <a name="output_databases_password"></a> [databases\_password](#output\_databases\_password) | n/a |
-| <a name="output_databases_user"></a> [databases\_user](#output\_databases\_user) | n/a |
-| <a name="output_droplet_ipv4_addresses"></a> [droplet\_ipv4\_addresses](#output\_droplet\_ipv4\_addresses) | n/a |
-| <a name="output_droplet_sizes"></a> [droplet\_sizes](#output\_droplet\_sizes) | n/a |
-| <a name="output_k8s_endpoints"></a> [k8s\_endpoints](#output\_k8s\_endpoints) | n/a |
+| <a name="output_databases_host"></a> [databases\_host](#output\_databases\_host) | Databases host addresses |
+| <a name="output_databases_password"></a> [databases\_password](#output\_databases\_password) | Databases password |
+| <a name="output_databases_user"></a> [databases\_user](#output\_databases\_user) | Databases user |
+| <a name="output_droplet_ipv4_addresses"></a> [droplet\_ipv4\_addresses](#output\_droplet\_ipv4\_addresses) | Droplet IPv4 addresses |
+| <a name="output_droplet_sizes"></a> [droplet\_sizes](#output\_droplet\_sizes) | Droplet sizes |
+| <a name="output_k8s_endpoints"></a> [k8s\_endpoints](#output\_k8s\_endpoints) | Kubernetes cluster endpoints |
